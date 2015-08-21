@@ -1,0 +1,39 @@
+<head>
+  <title>Home</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome Home!</h1>
+    </header>
+
+    <main>
+        {{#each folders}}
+            {{> folder}}
+        {{/each}}
+
+        {{#each items}}
+            {{> item}}
+        {{/each}}
+    </main>
+
+    <aside>
+        <form class="new-item">
+            <input type="text" name="item" placeholder="New Item" />
+            <input type="text" name="url" placeholder="URL" />
+            <input type="submit" value="Enter" />
+        </form>
+    </aside>
+
+    <footer>
+    </footer>
+</body>
+
+<template name="item">
+    <h2>{{name}}</h2>
+    <div>
+        <p>{{url}}</p>
+    </div>
+</template>
